@@ -1,0 +1,28 @@
+{
+  "id": "srv-dc3b3vd9fdbs738cd310",
+  "name": "k5-day14-agent",
+  "dashboardUrl": "https://dashboard.render.com/web/srv-dc3b3vd9fdbs738cd310",
+  "repo": "https://github.com/nhatanh2901/K5-L3A-DAY14-DoanNhatAnh-2A202603408-Deployment-Benchmark-Observability",
+  "rootDir": "06-lab-complete",
+  "branch": "main",
+  "plan": "free",
+  "region": "singapore",
+  "runtime": "docker",
+  "url": "https://k5-day14-agent-j5ql.onrender.com",
+  "healthCheckPath": "/health",
+  "envSpecificDetails": {
+    "dockerCommand": "",
+    "dockerContext": ".",
+    "dockerfilePath": "./Dockerfile"
+  },
+  "redis": {
+    "id": "red-dc3b2jm7bikc73cm9oig",
+    "name": "k5-day14-redis",
+    "plan": "free",
+    "status": "available",
+    "region": "singapore",
+    "ipAllowList": [],
+    "maxmemoryPolicy": "noeviction",
+    "persistenceMode": "off"
+  }
+}

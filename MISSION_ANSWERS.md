@@ -1,6 +1,6 @@
 # Day 14 Lab — Mission Answers
 
-Ngày thực hành: 25/11/2026 (GMT+7). Các phép đo dùng Docker Desktop Linux và Python 3.11 trong container. Toàn bộ LLM là mock, không dùng API trả phí. Đang hoàn tất deploy cloud theo lựa chọn Render miễn phí của học viên.
+Ngày thực hành: 25/11/2026 (GMT+7). Các phép đo dùng Docker Desktop Linux và Python 3.11 trong container. Toàn bộ LLM là mock, không dùng API trả phí. Đã deploy agent và Redis lên Render miễn phí, kiểm tra đủ bốn HTTP status bắt buộc.
 
 ## Part 1: Localhost vs Production
 
@@ -73,7 +73,7 @@ Kết quả `/health` và `POST /ask` qua Nginx được lưu trong `reports/doc
 
 ### Exercise 3.1/3.2 — Trạng thái
 
-Railway đã tạo project nhưng deploy bị chặn do workspace bị hạn chế, Redis FAILED. Học viên chọn chuyển sang Render miễn phí. Đã chuẩn bị Blueprint cho web service và Redis; kết quả public URL và bốn lệnh tự kiểm được cập nhật trong [`DEPLOYMENT.md`](DEPLOYMENT.md) sau khi chạy thực tế.
+Railway bị hạn chế workspace nên học viên chọn Render miễn phí. Agent và Redis đã deploy thành công. Public URL: [https://k5-day14-agent-j5ql.onrender.com](https://k5-day14-agent-j5ql.onrender.com); `/health` 200, `/ready` 200, `/ask` thiếu key 401 và có key 200. Bằng chứng và ảnh dashboard trong [`DEPLOYMENT.md`](DEPLOYMENT.md).
 
 ### So sánh Railway và Render
 
@@ -198,7 +198,7 @@ Script chấm được chạy nguyên bản trên Linux/Python 3.11, Docker sock
      ✅ Graceful shutdown
      ✅ Public URL ready (Railway / Render config)
 ----------------------------------------------------------------
-  Result: 12/12 tiêu chí đạt · 41/41 checks passed
+  Result: 12/12 tiêu chí đạt · 44/44 checks passed
   🎉 PASS 12/12 — PRODUCTION READY! Deploy nào!
 ================================================================
 ```
@@ -213,5 +213,6 @@ Script chấm được chạy nguyên bản trên Linux/Python 3.11, Docker sock
 | Benchmark và sửa knowledge base Part 7 | Chạy baseline, bổ sung tài liệu JWT/HPA ở KB develop và production | Không sửa golden dataset; eval lại 23/23, không regression; giữ baseline và các số load test thật |
 | Hoàn thiện báo cáo và bằng chứng | Tổng hợp JSON/CSV, chụp trình duyệt thật; sửa HOME trong Dockerfile observability mẫu | Đối chiếu số trong report với artifact; học viên cần đọc, tự chạy lại và giải thích trước khi nộp |
 | Thực hiện nốt deploy cloud | Đăng nhập Railway qua trình duyệt, tạo project; ghi nhận workspace bị chặn | Không nâng cấp trả phí; học viên chọn Render free; bổ sung Blueprint web + Redis và kiểm tra không lộ secret trước khi push |
+| Hoàn tất Render free | Tạo web service + Redis, API key ngẫu nhiên trong env; chụp dashboard và response thật | Public checks 200/200/401/200; script chấm nguyên bản PASS 12/12, 44/44 checks; không commit credential |
 
 Các kiểm tra tự động kể trên do AI agent thực hiện trong workspace. Chưa có xác nhận học viên đã tự kiểm tra hoặc diễn giải lại toàn bộ code/số liệu.

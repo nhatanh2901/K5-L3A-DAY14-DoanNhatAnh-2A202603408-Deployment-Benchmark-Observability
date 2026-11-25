@@ -7,7 +7,7 @@
   ⏳ Kiểm tra readiness khi Redis mất kết nối...
   ⏳ Kiểm tra cost guard (budget ≈ 0)...
   ⏳ Kiểm tra graceful shutdown (SIGTERM)...
-  ⏳ Build Docker image prod-check:a8dc1b56 (Docker 29.9.3) — lần đầu có thể mất vài phút...
+  ⏳ Build Docker image prod-check:1f24386f (Docker 29.9.3) — lần đầu có thể mất vài phút...
 
 ================================================================
   Production Readiness Check — Day 14 Lab
@@ -20,7 +20,7 @@
      ✅ Base image gọn (slim / alpine / distroless) — stage cuối dùng python:3.11-slim
      ✅ Chạy bằng user non-root
      ✅ Có HEALTHCHECK
-     ✅ Docker: build image thành công — 21s
+     ✅ Docker: build image thành công — 17s
      ✅ Docker: image < 500 MB — 274 MB
      ✅ Docker: container chạy được, GET /health → 200
 
@@ -71,12 +71,15 @@
 ✅ 11. Graceful shutdown
      ✅ Code xử lý SIGTERM / lifespan shutdown
      ✅ Khi chạy: SIGTERM lúc đang có request → request vẫn 200, process tự thoát — exit code 0
-     ✅ Docker: `docker stop` tắt êm (exit code 0, < 10s) — exit code 0, 0.6s
+     ✅ Docker: `docker stop` tắt êm (exit code 0, < 10s) — exit code 0, 0.5s
 
 ✅ 12. Public URL ready (Railway / Render config)
      ✅ Có railway.toml hoặc render.yaml (không chỉ toàn comment)
      ✅ railway.toml: builder + healthcheckPath = "/health"
+     ✅ render.yaml: web service + healthCheckPath /health
+     ✅ render.yaml: secret không ghi thẳng giá trị (generateValue / sync: false)
      ✅ App lắng nghe theo biến PORT do platform cấp
+     ✅ Public URL: GET https://k5-day14-agent-j5ql.onrender.com/health → 200
 
 ================================================================
   📋 Checklist Deliverable
@@ -93,6 +96,6 @@
      ✅ Graceful shutdown
      ✅ Public URL ready (Railway / Render config)
 ----------------------------------------------------------------
-  Result: 12/12 tiêu chí đạt · 41/41 checks passed
+  Result: 12/12 tiêu chí đạt · 44/44 checks passed
   🎉 PASS 12/12 — PRODUCTION READY! Deploy nào!
 ================================================================

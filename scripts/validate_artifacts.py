@@ -1,6 +1,7 @@
 """Check the local submission evidence without rerunning benchmarks."""
 import csv
 import json
+import re
 from pathlib import Path
 import subprocess
 
@@ -18,7 +19,8 @@ def main():
         original = subprocess.check_output(["git", "show", "HEAD:" + name], cwd=ROOT)
         assert (ROOT / name).read_bytes().replace(b"\r\n", b"\n") == original.replace(b"\r\n", b"\n"), name
     grader = (REPORTS / "production_ready.txt").read_text(encoding="utf-8")
-    assert "PASS 12/12" in grader and "41/41 checks passed" in grader
+    counts = re.search(r"(\d+)/(\d+) checks passed", grader)
+    assert "PASS 12/12" in grader and counts and int(counts[1]) == int(counts[2]) >= 41
     fixed = read("eval_v2_fixed.json")
     assert fixed["passed"] == fixed["total"] == 23
     assert fixed["quality_gate"]["passed"] and not fixed["quality_gate"]["regressions"]
@@ -47,6 +49,16 @@ def main():
     for filename in ("grafana-dashboard.png", "prometheus-alert-firing.png", "jaeger-slow-trace.png", "jaeger-error-trace.png"):
         assert (ROOT / "screenshots" / filename).read_bytes().startswith(b"\x89PNG\r\n\x1a\n")
     assert (ROOT / "DEPLOYMENT.md").exists()
+    public_path = REPORTS / "public_deployment_checks.json"
+    if public_path.exists():
+        public = read("public_deployment_checks.json")
+        assert public["passed"] and [r["status"] for r in public["checks"]] == [200, 200, 401, 200]
+        service = read("render_deployment.json")
+        assert service["plan"] == service["redis"]["plan"] == "free"
+        assert any(d["status"] == "live" for d in read("render_deployments.json"))
+        for filename in ("dashboard.png", "running.png", "test.png"):
+            assert (ROOT / "screenshots" / filename).read_bytes().startswith(b"\x89PNG\r\n\x1a\n")
+        print("Public deployment valid: live Render free services, 4 HTTP checks, 3 deployment screenshots")
     print("Local artifacts valid: grader, protected files, 7 load tests, eval, scaling, alerts, traces, screenshots")
     print("Cloud verification is recorded separately in DEPLOYMENT.md")
 

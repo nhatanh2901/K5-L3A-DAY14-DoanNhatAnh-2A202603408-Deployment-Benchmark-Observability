@@ -1,0 +1,43 @@
+{
+  "public_url": "https://k5-day14-agent-j5ql.onrender.com",
+  "checked_at": "2026-11-25T10:02:57.049296+00:00",
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "authenticated": false,
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "body": "{\"status\":\"ok\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "authenticated": false,
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "body": "{\"ready\":true}"
+    },
+    {
+      "method": "POST",
+      "path": "/ask",
+      "authenticated": false,
+      "status": 401,
+      "expected": 401,
+      "passed": true,
+      "body": "{\"detail\":\"Invalid or missing API key\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/ask",
+      "authenticated": true,
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "body": "{\"question\":\"Hello\",\"answer\":\"Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic.\",\"estimated_cost_usd\":1.035e-05}"
+    }
+  ],
+  "passed": true
+}

@@ -1,5 +1,7 @@
 # Day 14 — Deployment, Benchmark & Observability
 
+> **Bài làm đã hoàn tất:** agent [Render public](https://k5-day14-agent-j5ql.onrender.com/docs), script chấm **PASS 12/12 (44/44 checks)**, eval **23/23**. Xem [Mission Answers](MISSION_ANSWERS.md), [Deployment](DEPLOYMENT.md) và [Benchmark Report](BENCHMARK_REPORT.md) để kiểm tra số liệu, cấu hình và ảnh minh chứng.
+
 > Đưa agent lên cloud, đo xem nó nhanh và đúng tới đâu, rồi giám sát nó khi chạy thật.
 
 > **AICB-P1 · VinUniversity 2026**  

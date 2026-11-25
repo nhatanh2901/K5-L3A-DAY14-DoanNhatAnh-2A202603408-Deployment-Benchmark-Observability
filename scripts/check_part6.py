@@ -8,6 +8,6 @@ result = subprocess.run([sys.executable, "check_production_ready.py", *sys.argv[
                         cwd=root / "06-lab-complete", text=True,
                         stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 (root / "reports").mkdir(exist_ok=True)
-(root / "reports/production_ready.txt").write_text(result.stdout, encoding="utf-8")
+(root / "reports/production_ready.txt").write_text(result.stdout.rstrip() + "\n", encoding="utf-8")
 print(result.stdout, end="")
 raise SystemExit(result.returncode)

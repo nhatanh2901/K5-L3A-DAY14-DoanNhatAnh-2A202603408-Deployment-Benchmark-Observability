@@ -1,27 +1,49 @@
 # Deployment Information — Day 14
 
-## Trạng thái
+## Public URL và trạng thái
 
-Đang triển khai lên Render miễn phí theo lựa chọn của học viên. Chưa có public URL hoạt động để xác nhận. `PASS 12/12` hiện chứng minh agent local và cấu hình deploy hợp lệ.
+- **Public URL:** [https://k5-day14-agent-j5ql.onrender.com](https://k5-day14-agent-j5ql.onrender.com)
+- **Platform:** Render; web service Docker và Key Value (Redis) đều **Free**, region Singapore.
+- **Trạng thái:** deployment `dep-dc3b3vl9fdbs738cd3og` là `live`.
+- **Code đã deploy:** commit `c85378e40493ef58d9422069e6d19e2f9f30aaa4` từ branch `main`, root directory `06-lab-complete/`.
+- **Dashboard:** [Render service](https://dashboard.render.com/web/srv-dc3b3vd9fdbs738cd310).
+- **Đã kiểm tra:** 25/11/2026 17:02:57 GMT+7.
 
-Railway đã tạo project `k5-day14-agent` nhưng chặn deploy với thông báo `Suspicious activity: Your workspace has been restricted`. Redis deployment FAILED, service agent chưa tạo được. Không nâng cấp trả phí. Bằng chứng: [`reports/railway_deployment_status.json`](reports/railway_deployment_status.json).
+## Kiểm tra public thực tế
 
-## Code và nền tảng đã chuẩn bị
+| Request | API key | HTTP thực tế | Kết quả |
+|---|---|---:|---|
+| `GET /health` | Không cần | 200 | PASS |
+| `GET /ready` | Không cần | 200 | PASS, Redis kết nối được |
+| `POST /ask` | Không có | 401 | PASS |
+| `POST /ask` | Đúng key | 200 | PASS, mock agent trả lời |
 
-- Deploy thư mục `06-lab-complete/`, dùng `Dockerfile` và `railway.toml` trong thư mục này.
-- Blueprint Render: `06-lab-complete/render.yaml`, gồm web service Docker và Key Value (Redis), cùng region Singapore, đều `plan: free`.
-- `REDIS_URL` tham chiếu connection string nội bộ của Key Value; không public cổng Redis.
-- Đặt `AGENT_API_KEY` bằng secret của nền tảng. Không đưa giá trị thật vào repo.
+Output từng response đã lưu trong [`reports/public_deployment_checks.json`](reports/public_deployment_checks.json). Credential không có trong report.
 
-## Environment variables
+Script chấm nguyên bản đã chạy đầy đủ trên Linux/Python 3.11, có Docker, kèm `--public-url`: **PASS 12/12, 44/44 checks**. Output: [`reports/production_ready.txt`](reports/production_ready.txt).
 
-`PORT` do nền tảng cấp; `ENVIRONMENT=production`; `AGENT_API_KEY`; `REDIS_URL`; `RATE_LIMIT_PER_MINUTE=10`; `DAILY_BUDGET_USD=1`; `MONTHLY_BUDGET_USD=10`.
+## Cấu hình đã đặt
 
-## Kiểm tra sau khi deploy (Bash/WSL)
+| Biến | Cách cấu hình |
+|---|---|
+| `PORT` | Render cấp; Docker CMD đọc theo env |
+| `ENVIRONMENT` | `production` |
+| `AGENT_API_KEY` | Key ngẫu nhiên, đặt trong environment của Render; không commit |
+| `REDIS_URL` | URL nội bộ của Render Key Value; không public cổng Redis |
+| `RATE_LIMIT_PER_MINUTE` | `10` |
+| `DAILY_BUDGET_USD` | `1` |
+| `MONTHLY_BUDGET_USD` | `10` |
 
-Đặt `BASE` là URL được nền tảng cấp và `AGENT_API_KEY` trong terminal riêng. Những lệnh dưới đây chỉ in HTTP status, không in secret.
+Service `srv-dc3b3vd9fdbs738cd310` dùng Redis `red-dc3b2jm7bikc73cm9oig`. Redis có `ipAllowList: []`, `maxmemoryPolicy: noeviction`, `persistenceMode: off`. Metadata không chứa credential: [`reports/render_deployment.json`](reports/render_deployment.json), [`reports/render_deployments.json`](reports/render_deployments.json).
+
+API key có thể xem trong Render Dashboard → Environment. Bản dùng để tự kiểm được giữ ở file local bị Git ignore `.lab-tools/render-deployment.private.json`; không gửi hoặc commit file này.
+
+## Lệnh tái kiểm tra (Bash/WSL)
+
+Đặt `AGENT_API_KEY` riêng trong terminal trước khi chạy; các lệnh chỉ in HTTP status.
 
 ```bash
+BASE=https://k5-day14-agent-j5ql.onrender.com
 curl -sS -o /dev/null -w '%{http_code}\n' "$BASE/health"
 curl -sS -o /dev/null -w '%{http_code}\n' "$BASE/ready"
 curl -sS -o /dev/null -w '%{http_code}\n' -X POST "$BASE/ask" \
@@ -31,14 +53,22 @@ curl -sS -o /dev/null -w '%{http_code}\n' -X POST "$BASE/ask" \
   -d '{"question":"Hello"}'
 ```
 
-Kỳ vọng theo thứ tự: `200`, `200`, `401`, `200`. Các lệnh cloud này chưa được chạy.
+Kỳ vọng lần lượt: `200`, `200`, `401`, `200`.
 
-## Phần còn phải bổ sung khi làm deploy
+## Ảnh minh chứng
 
-- Public URL thật và tên nền tảng đã dùng.
-- Output bốn lệnh trên và `check_production_ready.py --public-url "$BASE"`.
-- `screenshots/dashboard.png`, `screenshots/running.png`, `screenshots/test.png`, đã che secrets.
+- [Dashboard Render: Free, Live, commit và URL](screenshots/dashboard.png).
+- [Service running: GET /health trả 200](screenshots/running.png).
+- [API test: POST /ask thiếu key trả 401](screenshots/test.png).
+
+Đây là ảnh chụp thật của dashboard và Swagger trên URL public. Trường hợp key đúng trả 200 được lưu trong JSON để ảnh không lộ key.
+
+## Railway đã thử trước đó
+
+Railway tạo được project nhưng chặn deploy với thông báo `Suspicious activity: Your workspace has been restricted`; Redis deployment FAILED, agent chưa được tạo. Không nâng cấp trả phí. Học viên chọn chuyển sang Render free. Bằng chứng: [`reports/railway_deployment_status.json`](reports/railway_deployment_status.json).
 
 ## Giới hạn gói free
 
-Web service có thể ngủ khi không có traffic; lần gọi sau có cold start. Key Value free không có persistence qua restart của chính Redis. State vẫn dùng chung và tồn tại qua restart agent nếu Redis không bị restart. Xem [Render Free](https://render.com/docs/free).
+Web service có thể ngủ sau thời gian không có traffic; request tiếp theo có cold start. Redis free không có persistence qua restart của chính Redis. State vẫn dùng chung và tồn tại qua restart agent khi Redis không restart. Xem [giới hạn Render Free](https://render.com/docs/free).
+
+Auto-deploy tắt để giữ deployment đã kiểm tra. Các commit bổ sung báo cáo sau commit deploy không thay đổi source agent đang chạy; nếu sửa app, cần manual deploy rồi kiểm tra lại.
