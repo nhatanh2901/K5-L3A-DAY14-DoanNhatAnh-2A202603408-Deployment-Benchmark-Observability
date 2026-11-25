@@ -1,0 +1,32 @@
+name: Agent quality gate
+on:
+  push:
+  pull_request:
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 06-lab-complete/benchmark-observability/develop
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Start agent and wait for readiness
+        run: |
+          AGENT_VERSION=v2 MOCK_ERROR_RATE=0 python app.py > /tmp/agent.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://localhost:8000/ready; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/agent.log
+          exit 1
+      - name: Require 100% accuracy and no regression
+        run: python eval/run_eval.py --min-accuracy 1.0 --baseline ../../../reports/eval_v2_fixed.json --out reports/ci_eval.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report
+          path: 06-lab-complete/benchmark-observability/develop/reports/ci_eval.json

@@ -1,0 +1,445 @@
+{
+  "part1_develop": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 25 Nov 2026 08:12:29 GMT",
+      "server": "uvicorn",
+      "content-length": "126",
+      "content-type": "application/json"
+    },
+    "body": {
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    }
+  },
+  "part1_production": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 25 Nov 2026 08:12:30 GMT",
+      "server": "uvicorn",
+      "content-length": "144",
+      "content-type": "application/json"
+    },
+    "body": {
+      "question": "Hello",
+      "answer": "Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận.",
+      "model": "gpt-4o-mini"
+    }
+  },
+  "part1_health": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 25 Nov 2026 08:12:30 GMT",
+      "server": "uvicorn",
+      "content-length": "129",
+      "content-type": "application/json"
+    },
+    "body": {
+      "status": "ok",
+      "uptime_seconds": 0.3,
+      "version": "1.0.0",
+      "environment": "development",
+      "timestamp": "2026-11-25T08:12:30.804574+00:00"
+    }
+  },
+  "part4_missing": {
+    "status": 401,
+    "headers": {
+      "date": "Wed, 25 Nov 2026 08:12:46 GMT",
+      "server": "uvicorn",
+      "content-length": "67",
+      "content-type": "application/json"
+    },
+    "body": {
+      "detail": "Missing API key. Include header: X-API-Key: <your-key>"
+    }
+  },
+  "part4_authorized": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 25 Nov 2026 08:12:46 GMT",
+      "server": "uvicorn",
+      "content-length": "114",
+      "content-type": "application/json"
+    },
+    "body": {
+      "question": "Hello",
+      "answer": "Agent đang hoạt động tốt! (mock response) Hỏi thêm câu hỏi đi nhé."
+    }
+  },
+  "part4_login": {
+    "status": 200,
+    "token": "[REDACTED]"
+  },
+  "part4_burst": [
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "196",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 9,
+          "budget_remaining_usd": 1.9e-05
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "196",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 8,
+          "budget_remaining_usd": 3.8e-05
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "196",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 7,
+          "budget_remaining_usd": 5.7e-05
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "196",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 6,
+          "budget_remaining_usd": 7.6e-05
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "196",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 5,
+          "budget_remaining_usd": 9.4e-05
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "197",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 4,
+          "budget_remaining_usd": 0.000113
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "197",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 3,
+          "budget_remaining_usd": 0.000132
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "197",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 2,
+          "budget_remaining_usd": 0.000151
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:47 GMT",
+        "server": "uvicorn",
+        "content-length": "196",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 1,
+          "budget_remaining_usd": 0.00017
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:48 GMT",
+        "server": "uvicorn",
+        "content-length": "197",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "question": "What is Docker?",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "usage": {
+          "requests_remaining": 0,
+          "budget_remaining_usd": 0.000189
+        }
+      }
+    },
+    {
+      "status": 429,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:48 GMT",
+        "server": "uvicorn",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "0",
+        "x-ratelimit-reset": "1795594428",
+        "retry-after": "59",
+        "content-length": "98",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "detail": {
+          "error": "Rate limit exceeded",
+          "limit": 10,
+          "window_seconds": 60,
+          "retry_after_seconds": 59
+        }
+      }
+    },
+    {
+      "status": 429,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:48 GMT",
+        "server": "uvicorn",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "0",
+        "x-ratelimit-reset": "1795594428",
+        "retry-after": "59",
+        "content-length": "98",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "detail": {
+          "error": "Rate limit exceeded",
+          "limit": 10,
+          "window_seconds": 60,
+          "retry_after_seconds": 59
+        }
+      }
+    },
+    {
+      "status": 429,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:48 GMT",
+        "server": "uvicorn",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "0",
+        "x-ratelimit-reset": "1795594428",
+        "retry-after": "59",
+        "content-length": "98",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "detail": {
+          "error": "Rate limit exceeded",
+          "limit": 10,
+          "window_seconds": 60,
+          "retry_after_seconds": 59
+        }
+      }
+    },
+    {
+      "status": 429,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:48 GMT",
+        "server": "uvicorn",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "0",
+        "x-ratelimit-reset": "1795594429",
+        "retry-after": "59",
+        "content-length": "98",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "detail": {
+          "error": "Rate limit exceeded",
+          "limit": 10,
+          "window_seconds": 60,
+          "retry_after_seconds": 59
+        }
+      }
+    },
+    {
+      "status": 429,
+      "headers": {
+        "date": "Wed, 25 Nov 2026 08:12:48 GMT",
+        "server": "uvicorn",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "0",
+        "x-ratelimit-reset": "1795594429",
+        "retry-after": "59",
+        "content-length": "98",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "body": {
+        "detail": {
+          "error": "Rate limit exceeded",
+          "limit": 10,
+          "window_seconds": 60,
+          "retry_after_seconds": 59
+        }
+      }
+    }
+  ],
+  "part5_health": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 25 Nov 2026 08:12:49 GMT",
+      "server": "uvicorn",
+      "content-length": "185",
+      "content-type": "application/json"
+    },
+    "body": {
+      "status": "ok",
+      "uptime_seconds": 0.3,
+      "version": "1.0.0",
+      "environment": "development",
+      "timestamp": "2026-11-25T08:12:50.077825+00:00",
+      "checks": {
+        "memory": {
+          "status": "ok",
+          "used_percent": 13.9
+        }
+      }
+    }
+  },
+  "part5_ready": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 25 Nov 2026 08:12:49 GMT",
+      "server": "uvicorn",
+      "content-length": "37",
+      "content-type": "application/json"
+    },
+    "body": {
+      "ready": true,
+      "in_flight_requests": 1
+    }
+  }
+}

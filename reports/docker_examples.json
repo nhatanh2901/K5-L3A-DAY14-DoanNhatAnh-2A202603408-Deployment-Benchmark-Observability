@@ -1,0 +1,43 @@
+{
+  "develop": {
+    "url": "http://localhost:18000/ask?question=Hello",
+    "status": 200,
+    "body": {
+      "answer": "Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận."
+    }
+  },
+  "nginx_health": {
+    "url": "http://localhost/health",
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "uptime_seconds": 136.2,
+      "version": "2.0.0",
+      "timestamp": "2026-11-25T08:31:11.584454"
+    }
+  },
+  "nginx_ask": {
+    "url": "http://localhost/ask",
+    "status": 200,
+    "body": {
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    }
+  },
+  "images": [
+    {
+      "tags": [
+        "my-agent:develop"
+      ],
+      "size_bytes": 1667792692,
+      "size_mib": 1590.53
+    },
+    {
+      "tags": [
+        "my-agent:advanced"
+      ],
+      "size_bytes": 239815385,
+      "size_mib": 228.71
+    }
+  ],
+  "size_reduction_percent": 85.62
+}

@@ -1,0 +1,1 @@
+Saved jaeger-error-trace.png: 🦩 7818589: POST /ask (observable-agent) — Jaeger UI

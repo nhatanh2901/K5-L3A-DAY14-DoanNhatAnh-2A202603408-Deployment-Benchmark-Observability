@@ -1,0 +1,11 @@
+INFO:     Started server process [31]
+INFO:     Waiting for application startup.
+2026-11-25 08:12:49,771 INFO Agent starting up...
+2026-11-25 08:12:49,772 INFO Loading model and checking dependencies...
+2026-11-25 08:12:49,973 INFO ✅ Agent is ready!
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8106 (Press CTRL+C to quit)
+INFO:     127.0.0.1:40172 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40172 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40172 - "GET /ready HTTP/1.1" 200 OK
+2026-11-25 08:12:50,083 INFO Received signal 15 — uvicorn will handle graceful shutdown

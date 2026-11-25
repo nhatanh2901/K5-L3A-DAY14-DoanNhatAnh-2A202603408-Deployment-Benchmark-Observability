@@ -1,0 +1,37 @@
+INFO:     Started server process [25]
+INFO:     Waiting for application startup.
+INFO:app:Security layer initialized
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8105 (Press CTRL+C to quit)
+INFO:     127.0.0.1:36638 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36638 - "POST /auth/token HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=1 cost=$0.0000/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=2 cost=$0.0000/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=3 cost=$0.0001/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=4 cost=$0.0001/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=5 cost=$0.0001/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=6 cost=$0.0001/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=7 cost=$0.0001/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=8 cost=$0.0002/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=9 cost=$0.0002/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:cost_guard:Usage: user=student req=10 cost=$0.0002/1.0
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 429 Too Many Requests
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 429 Too Many Requests
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 429 Too Many Requests
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 429 Too Many Requests
+INFO:     127.0.0.1:36638 - "POST /ask HTTP/1.1" 429 Too Many Requests
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app:Shutdown
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25]

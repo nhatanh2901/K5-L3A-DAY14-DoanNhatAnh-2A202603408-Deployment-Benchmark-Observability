@@ -1,0 +1,60 @@
+{
+  "traceID": "78185894fddda4266168d1f13e934df5",
+  "source": "Jaeger v3 OTLP HTTP API",
+  "spans": [
+    {
+      "operationName": "agent.retrieve_context",
+      "startTime": 1795596990749398.0,
+      "duration": 23663.304,
+      "logs": [],
+      "status": {}
+    },
+    {
+      "operationName": "chat mock-llm-large",
+      "startTime": 1795596990773139.0,
+      "duration": 230854.741,
+      "logs": [
+        {
+          "fields": [
+            {
+              "key": "event",
+              "value": "exception"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "message": "LLMError: Upstream LLM error: 503 Service Unavailable (mock)",
+        "code": 2
+      }
+    },
+    {
+      "operationName": "agent.run",
+      "startTime": 1795596990749375.2,
+      "duration": 254856.145,
+      "logs": [
+        {
+          "fields": [
+            {
+              "key": "event",
+              "value": "exception"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "message": "LLMError: Upstream LLM error: 503 Service Unavailable (mock)",
+        "code": 2
+      }
+    },
+    {
+      "operationName": "POST /ask",
+      "startTime": 1795596990747987.5,
+      "duration": 257010.845,
+      "logs": [],
+      "status": {
+        "code": 2
+      }
+    }
+  ]
+}

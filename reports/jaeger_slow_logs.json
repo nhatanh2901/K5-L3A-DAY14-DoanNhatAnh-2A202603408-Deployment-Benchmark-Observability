@@ -1,0 +1,32 @@
+[
+  {
+    "ts": "2026-11-25T08:55:06.828943+00:00",
+    "level": "INFO",
+    "service": "observable-agent",
+    "instance": "672032fe7a0f",
+    "event": "llm_call",
+    "trace_id": "802c8b9155e19b4a8ef13aa626ee0cad",
+    "span_id": "d2ac8847f93cb1ba",
+    "request_id": "326342972a83",
+    "model": "mock-llm-large",
+    "agent_version": "v2",
+    "input_tokens": 92,
+    "output_tokens": 55,
+    "cost_usd": 0.00078,
+    "llm_ms": 1994.6
+  },
+  {
+    "ts": "2026-11-25T08:55:06.829500+00:00",
+    "level": "INFO",
+    "service": "observable-agent",
+    "instance": "672032fe7a0f",
+    "event": "http_request",
+    "trace_id": "802c8b9155e19b4a8ef13aa626ee0cad",
+    "span_id": "d2ac8847f93cb1ba",
+    "request_id": "326342972a83",
+    "method": "POST",
+    "route": "/ask",
+    "status": 200,
+    "ms": 2019.7
+  }
+]

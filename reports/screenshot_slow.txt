@@ -1,0 +1,1 @@
+Saved jaeger-slow-trace.png: 🧩 802c8b9: POST /ask (observable-agent) — Jaeger UI

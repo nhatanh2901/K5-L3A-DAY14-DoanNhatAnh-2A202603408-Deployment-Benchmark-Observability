@@ -1,0 +1,679 @@
+{
+  "variables": {
+    "MOCK_ERROR_RATE": "0.01",
+    "MOCK_SLOW_RATE": "0.03",
+    "LLM_MODEL": "mock-llm-large"
+  },
+  "duration_s": 185.75,
+  "first_observed_firing_s": {
+    "LLMCostBurnRateHigh": 0.04
+  },
+  "observations": [
+    {
+      "elapsed_s": 0.04,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $5.90/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "5.8962664683709605e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 5.07,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $5.76/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "5.758927987128878e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 10.08,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $5.61/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "5.613127601078654e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 15.1,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $7.85/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "7.846909004202364e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 20.13,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $9.84/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "9.842957867864376e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 25.16,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $11.77/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "1.1770224799063302e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 30.19,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $13.60/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "1.3599332146915238e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 35.22,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $15.51/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "1.5508858266318187e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 40.23,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $17.48/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "1.7482888281227396e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 45.26,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $19.28/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "1.9282738481292863e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 50.29,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $21.15/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "2.115450769496929e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 55.31,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $23.13/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "2.3127766410058214e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 60.32,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $25.17/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "2.51741681559437e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 65.33,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $27.10/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "2.7095181894395957e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 70.34,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $28.94/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "2.893607977308316e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 75.36,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $30.81/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "3.0808284833775907e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 80.37,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $32.67/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "3.267218222543275e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 85.38,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $34.58/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "3.4577108218295976e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 90.4,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $36.38/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "3.637520601913216e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 95.42,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $38.25/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "3.824501337161662e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 100.42,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $40.08/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "4.0082702287609166e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 105.44,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $42.02/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "4.202004870969777e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 110.45,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $43.90/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "4.38951962448575e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 115.47,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $45.83/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "4.583328253358004e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 120.5,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $47.65/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "4.764678530296926e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 125.5,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $49.57/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "4.956911656759731e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 130.53,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $51.55/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "5.1551343677209644e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 135.54,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $53.43/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "5.342760654581784e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 140.57,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $55.32/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "5.532114526018615e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 145.6,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $57.24/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "5.723720757938525e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 150.61,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $59.02/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "5.902488227912069e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 155.64,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $60.84/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "6.084302748499787e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 160.67,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $62.78/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "6.277741615190538e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 165.69,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $64.65/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "6.464749475509667e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 170.72,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $66.49/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "6.649340565852556e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 175.72,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $68.36/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "6.835862248080456e+01"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 180.74,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $70.35/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T08:47:32.571501534Z",
+          "value": "7.035228727294196e+01"
+        }
+      ]
+    }
+  ]
+}

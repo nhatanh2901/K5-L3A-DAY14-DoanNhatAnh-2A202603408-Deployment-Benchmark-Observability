@@ -81,6 +81,30 @@ Script tự khởi động agent của bạn, gọi API thật, build và chạy
 
 ## Chạy local
 
+### Bài làm hiện tại
+
+Agent đã hoàn thiện các TODO và đạt `PASS 12/12` trên Linux/Python 3.11, có kiểm tra Docker. Output thật nằm ở [`../reports/production_ready.txt`](../reports/production_ready.txt). Báo cáo: [`../MISSION_ANSWERS.md`](../MISSION_ANSWERS.md), [`../BENCHMARK_REPORT.md`](../BENCHMARK_REPORT.md). Trạng thái cloud và lệnh kiểm tra public URL nằm trong [`../DEPLOYMENT.md`](../DEPLOYMENT.md).
+
+Trên PowerShell, chạy trong `06-lab-complete/` để tạo file cấu hình local với API key ngẫu nhiên (không in key):
+
+```powershell
+py -3.13 -c "from pathlib import Path; import secrets; p=Path('.env'); p.exists() or p.write_text(Path('.env.example').read_text().replace('AGENT_API_KEY=', 'AGENT_API_KEY='+secrets.token_urlsafe(32)), encoding='utf-8')"
+docker compose -p k5-day14-final up -d --build
+Invoke-RestMethod http://localhost:8000/health
+Invoke-RestMethod http://localhost:8000/ready
+```
+
+Không commit `.env`. Docker Compose tự đặt Redis URL nội bộ, không dùng URL localhost trong file mẫu. Để chạy script chấm từ Windows mà vẫn kiểm tra được SIGTERM, build runner từ gốc repo:
+
+```powershell
+docker build -f scripts/Dockerfile.lab-runner -t k5-day14-lab-runner .
+docker run --rm --network host -v "${PWD}:/workspace" -v /var/run/docker.sock:/var/run/docker.sock k5-day14-lab-runner python scripts/check_part6.py
+```
+
+Runner cần Docker Desktop Linux và host networking hoạt động. Nó dùng Docker socket để chạy script chấm nguyên bản, lưu stdout vào `reports/production_ready.txt`. Khi xong stack tự bật để chạy app, dùng `docker compose -p k5-day14-final down` trong thư mục Part 6; Redis volume được giữ lại.
+
+### Lệnh mẫu của đề
+
 ```bash
 pip install -r requirements.txt
 cp .env.example .env

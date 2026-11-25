@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-25",
+  "project_id": "c90c2bd3-1948-4667-88a1-99edb452c296",
+  "project_name": "k5-day14-agent",
+  "redis_service_id": "b9ea3bb4-e03a-4773-8c5f-20596036193a",
+  "redis_deployment_id": "07963f29-e521-4483-a166-f71a07ca8833",
+  "redis_status": "FAILED",
+  "agent_created": false,
+  "public_url": null,
+  "plan": "trial",
+  "blocked_reason": "Suspicious activity: Your workspace has been restricted",
+  "action": "No paid upgrade; user chose Render free as an alternative."
+}

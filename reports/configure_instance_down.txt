@@ -1,0 +1,4 @@
+ Container k5-day14-observability-jaeger-1 Running
+ Container k5-day14-observability-agent-1 Running
+ Container k5-day14-observability-agent-2 Running
+ Container k5-day14-observability-agent-3 Running
